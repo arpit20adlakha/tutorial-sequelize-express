@@ -17,13 +17,13 @@ exports.create = (req, res) => {
         published: req.body.published ? req.body.published : false
     }
 
-Tutorial.create(tutorial).then(data => {
-    res.status(200).send(data);
-}).catch( err => {
-    res.status(500).send({
-        message: err.message || "Some error occured while creating the tutorial"
-    })
-});
+    Tutorial.create(tutorial).then(data => {
+        res.status(200).send(data);
+    }).catch( err => {
+        res.status(500).send({
+            message: err.message || "Some error occured while creating the tutorial"
+        })
+    });
 };
 
 exports.findAll = (req, res) => {
